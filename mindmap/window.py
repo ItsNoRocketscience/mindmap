@@ -17,6 +17,11 @@ class MainWindow(tk.Frame):
         self.canvas = tk.Canvas(self, width=width, height=height, bg='white')
         self.canvas.grid(row=0, column=0)
 
+        self.canvas.bind('<Button-1>', self.click)
+
+    def click(self, event):
+        pos = (event.x, event.y)
+        print(pos)
 
 if __name__ == '__main__':
     app = MainWindow(title='Testing the MainWindow-Class')
